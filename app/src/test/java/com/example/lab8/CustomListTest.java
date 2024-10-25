@@ -51,4 +51,25 @@ public class CustomListTest {
         list.deleteCity("Nanton", "AB");
         assertFalse(list.hasCity("Nanton", "AB"));
     }
+
+    @Test
+    public void countCitiesTest() {
+        CustomList list = MockCityList();
+        int expectedCount = 0;
+        assertEquals(expectedCount, list.getCount(), "Count should have been 0");
+
+        City cityToAdd = new City("Nanton", "AB");
+        list.addCity(cityToAdd);
+        expectedCount = 1;
+        assertEquals(expectedCount, list.getCount(), "The city was not added to the list");
+
+        City cityToAdd2 = new City("Waterloo", "ON");
+        list.addCity(cityToAdd2);
+        expectedCount = 2;
+        assertEquals(expectedCount, list.getCount(), "The city was not added to the list");
+
+        list.deleteCity("Nanton", "AB");
+        expectedCount = 1;
+        assertEquals(expectedCount, list.getCount(), "The city was not deleted from the list");
+    }
 }
