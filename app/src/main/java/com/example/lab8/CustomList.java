@@ -53,5 +53,13 @@ public class CustomList extends ArrayAdapter<City> {
         cities.add(city);
     }
 
+    public boolean hasCity(String cityName, String provinceName) {
+        for (City city : cities) {
+            if (city.getCityName().equals(cityName) && city.getProvinceName().equals(provinceName)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }
