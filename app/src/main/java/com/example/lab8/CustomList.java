@@ -62,4 +62,6 @@ public class CustomList extends ArrayAdapter<City> {
         return false;
     }
 
+
+
 }
